@@ -2,13 +2,6 @@ target/
 bin/
 obj/
 .vs/
-*.user
-*.suo
-node_modules/
 .idea/
 nbproject/private/
-build/
-dist/
-*.log
-.DS_Store
-Thumbs.db
+*.user
