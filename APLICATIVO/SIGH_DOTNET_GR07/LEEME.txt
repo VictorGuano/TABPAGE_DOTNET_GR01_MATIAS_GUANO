@@ -1,0 +1,28 @@
+﻿SIGH - Hospital General Monster Salud
+Talleres Login y CRUD MVC con ASP.NET Core y SQL Server - Grupo GR07
+Integrantes: Victor Guano, Jeanco Matias
+
+1. Base de datos
+   - Abrir SQL Server Management Studio y conectarse a localhost
+     (Autenticación de SQL Server, usuario ariel).
+   - Abrir BD_MONSTER_GR07_SQLSERVER.sql y ejecutarlo con F5.
+     Crea la base bd_monster_gr07 con las tablas del subsistema de Seguridad y los datos de prueba.
+   - Después abrir CREAR_MODULO_PERSONAL_SQLSERVER.sql y ejecutarlo con F5.
+     Crea PEDEP_DEPAR y PECAR_CARGO y el menú PERSONAL (Administrar departamentos y cargos).
+   - Si la base ya existía con Admisión, Clínica y Farmacia, ejecutar LIMPIAR_MODULOS_NO_SEGURIDAD_SQLSERVER.sql.
+
+2. Aplicación
+   - Abrir SIGH_DOTNET_GR07.sln con Visual Studio 2026 (.NET 10).
+   - La cadena de conexión está en appsettings.json -> ConnectionStrings:ConexionSQLServer.
+   - Ejecutar con el perfil "http" (F5). Se abre http://localhost:5207
+
+3. Usuarios de prueba (contraseña de todos: Monster2026)
+   admin      ADMINISTRADOR DEL SISTEMA  (personal, usuarios, perfiles y auditoría)
+   mtorres    MEDICO                     (consulta externa y citas)
+   aguerrero  ENFERMERO                  (signos vitales) - tiene 1 intento fallido
+   landrade   FARMACEUTICO               (dispensación) - cuenta bloqueada
+
+4. Correo (opcional)
+   Si se llenan Correo:Usuario y Correo:Clave en appsettings.json (cuenta Gmail con
+   contraseña de aplicación), el enlace de recuperación se envía por correo. Si no, el enlace
+   se muestra en pantalla y en la ventana de salida de Visual Studio.

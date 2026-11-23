@@ -1,0 +1,14 @@
+﻿-- SIGH - GR07 (SQL Server): quita del menú Admisión, Clínica y Farmacia (deja SEGURIDAD y PERSONAL).
+-- Ejecutar en SQL Server Management Studio sobre una base ya creada con la versión anterior del script.
+USE bd_monster_gr07;
+GO
+BEGIN TRANSACTION;
+DELETE FROM XEOXP_OPCPE WHERE XEOPC_CODIGO IN ('A001','A002','C001','C002','F001');
+DELETE FROM XEOPC_OPCIO WHERE XESIS_CODIGO IN ('ADM','CLI','FAR');
+DELETE FROM XESIS_SISTE WHERE XESIS_CODIGO IN ('ADM','CLI','FAR');
+COMMIT;
+GO
+SELECT * FROM XESIS_SISTE;
+SELECT * FROM XEOPC_OPCIO;
+SELECT * FROM XEOXP_OPCPE;
+GO
